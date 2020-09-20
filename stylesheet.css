@@ -1,0 +1,466 @@
+                    /* Reset || Phase */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+                    /* General Styles || Phase */
+
+:root {
+    --bg-color: #DD5206;
+    --green-color: #00771F;
+}
+
+body {
+    font-family: Ubuntu, sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+.container {
+    width: calc(100% - 50px);
+    //max-width: 900px;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin-bottom: 1em;
+    line-height: normal;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: normal;
+    margin-bottom: 1em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+ul {
+    list-style: none;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: var(--green-color);
+}
+
+a {
+    text-decoration: none;
+    text-transform: capitalize;
+    display: inline-block;
+    font-weight: 300;
+    transition: opacity 250ms;
+    color: #fff;
+}
+
+a:hover {
+    opacity: 0.75;
+}
+
+.orange {
+    color: var(--bg-color);
+    font-weight: bold;
+}
+
+.btn {
+    text-align: center; /*This is to center the buttons on page*/
+    margin-top: 1em;
+}
+
+.register {
+    color: #fff;
+    background-color: var(--bg-color);
+    padding: 0.8em 2.4em;
+    border: none;
+    text-align: center;
+    border-radius: 3px;
+    position: relative;
+    font-weight: 400;
+}
+
+.register::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    background-color: rgba(221,82,6,.75);
+    z-index: -1;
+    animation: pulser 2000ms ease-out infinite;
+}
+
+@keyframes pulser {
+    0% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    
+    100% {
+        transform: scale(1.2, 1.4);
+        opacity: 0;
+    }
+}
+
+
+
+                    /* Header || Phase */
+
+.banner {
+    background-color: #000;
+    padding-bottom: 2em;
+}
+
+.banner>.comp-logo-ham {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: rgba(0,0,0,.93);
+    padding: 0.65em 0;
+}
+
+.banner>.comp-logo-ham a {
+    text-transform: uppercase;
+    color: #000;
+    width: 80px;
+}
+
+.comp-logo-ham img {
+    padding: 0 0.5em;
+}
+
+.comp-logo-ham>label {
+    width: 80px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 0.5em;
+    color: #fff;
+    cursor: pointer;
+}
+
+#toggler {
+    display: none;
+}
+
+#toggler:checked + nav {
+    transform: scaleX(1);
+    transform-origin: left;
+    opacity: 1;
+}
+
+nav {
+    width: 72%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-bottom: 2em;
+    height: 100vh;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    background-color: #fff;
+    transition: transform 200ms ease-out,
+                     opacity 190ms ease-out;
+}
+
+nav>.image {
+    background-color: #000;
+    padding: 1em;
+}
+
+nav>.image:hover {
+    background-color: #DD5206;
+}
+
+nav>.image img {
+    width: 80px;
+}
+
+nav ul {
+    height: 100%;
+}
+
+nav ul li {
+    padding: 1.2em;
+    border-bottom: 1px solid rgba(0,0,0,.25);
+}
+
+nav ul li:nth-of-type(3) {
+    border: 1px solid rgba(0,0,0,.25);
+    border-radius: 20px;
+    margin-top: 1.5em;
+    margin-left: 1em;
+    display: inline-block;
+    padding: 0.5em 0.8em;
+}
+
+nav ul li:last-of-type {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--bg-color);
+    text-align: center;
+    width: 100%;
+}
+
+.banner-text {
+    color: #fff;
+    font-weight: 300;
+    padding: 2em 1em;
+}
+
+
+
+                    /* Main Content || Phase */
+
+main {
+    padding-top: 2em;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+section {
+    padding: 2em 1em;
+    font-size: 0.9rem;
+}
+
+.franchise {
+    text-align: center;
+}
+
+.franchise .porkoyum-name {
+    width: 25%;
+    vertical-align: middle;
+}
+
+.story {
+    background-image: url(Images/porkmoney-story-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.enterprise {
+    text-align: center;
+}
+
+.enterprise  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5em 0;
+}
+
+.enterprise .wrapper>.porkwoman {
+    max-width: 150px ;
+}
+
+.enterprise .wrapper .paragraph {
+    width: 250px;
+    text-align: right;
+    padding-right: 0.3em;
+}
+
+.enterprise ul {
+    margin: 0 auto;
+    margin-top: 2em;
+    font-weight: bold; 
+}
+
+.enterprise ul li {
+    display: inline;
+    border-right: 1px solid var(--bg-color);
+    padding: 0.4em;
+}
+
+.porkyum-name-2 {
+    width: 32%;
+}
+
+.brand {
+    margin-bottom: 3em;
+}
+
+.brand h1 {
+    text-align: center;
+    margin-bottom: 0.3em;
+}
+
+.partners {
+    text-align: center;
+}
+
+.opinion {
+    text-align: center;
+}
+
+.opinion h1 {
+    margin-bottom: 0;
+}
+
+.opinion>p {
+    font-weight: 300;
+}
+
+.opinion span {
+    color: var(--bg-color);
+}
+
+.opinion h1:nth-of-type(2) {
+    font-size: 3rem;
+}
+
+.instagram {
+    padding: 0;
+    text-align: center;
+}
+
+.instagram .image-wrapper {
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.instagram .follow {
+    width: 33%;
+    position: relative;
+}
+
+.instagram img {
+    display: block;
+}
+
+.instagram .follow::after {
+    content: "";
+    height: 100%;
+    width: 0;
+    background-color: rgba(0,0,0,.83);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 200ms ease-in;
+}
+
+.instagram .follow:hover::after {
+    width: 100%;
+}
+
+                    /* Footer || Phase */
+
+footer {
+    padding: 2em 1em;
+    background-color: #000;
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 1em;
+}
+
+.footer-wrapper img {
+    width: 200px ;
+    margin-bottom: 2em;
+}
+
+.footer-wrapper input[type="email"] {
+    width: 70%;
+    padding: 0.7em;
+    border: 1px solid #DD5206;
+    border-radius: 8px;
+    background-color: #000;
+    color: #fff;
+    margin-top: 0.5em;
+}
+
+.footer-wrapper button {
+    width: 50%;
+    border-radius: 4px;
+    margin-top: 0.5em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+footer section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer section>.section-wrapper {
+    height: 8em;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+footer section ul {
+    line-height: 1.8;
+}
+
+footer span {
+    display: inline-block;
+    margin-bottom: 0.5em;
+    font-size: 0.8rem;
+}
+
+footer section .alignment {
+    text-align: right;
+}
+
+footer section .icon {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: 0.2em;
+}
+
+footer p {
+    text-align: center;
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+
+@media only screen and (min-width: 960px ) {
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

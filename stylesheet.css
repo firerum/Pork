@@ -380,7 +380,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0 1em;
+    padding: 0 1em; 
 }
 
 .footer-wrapper img {
@@ -447,10 +447,25 @@ footer p {
 }
 
 @media only screen and (min-width: 960px ) {
-    footer {
+    
+    footer section {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: flex-start;
+        width: 50%;
+        border: 1px solid #fff;
+    }
+    
+    footer .section-wrapper {
+        width: 50%;
+        margin-right: 2em;
+    }
+    
+    footer>.row {
+        display: flex;
+        justify-content: center;
+        border: 1px solid #fff;
     }
 }
 

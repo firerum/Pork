@@ -138,6 +138,7 @@ a:hover {
     align-items: center;
     background-color: rgba(0,0,0,.93);
     padding: 0.65em 0;
+    z-index: 1000;
 }
 
 .banner>.comp-logo-ham a {
